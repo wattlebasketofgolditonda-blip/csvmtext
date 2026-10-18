@@ -38,7 +38,7 @@ def build_parser():
 
     stats = sub.add_parser("stats", help="show count, sum, mean and median")
     stats.add_argument("file", help="path to the CSV file")
-    stats.add_argument("column", help="name of the colum to summarise")
+    stats.add_argument("column", help="name of the column to summarise")
     stats.set_defaults(func=cmd_stats)
 
     top = sub.add_parser("top", help="show the highest values in a column")
