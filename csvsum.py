@@ -51,7 +51,11 @@ def build_parser():
 
 def main(argv=None):
     args = build_parser().parse_args(argv)
-    args.func(args)
+    try:
+        args.func(args)
+    except KeyError as exc:
+        print(f"csvsum: no such column: {exc.args[0]}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
